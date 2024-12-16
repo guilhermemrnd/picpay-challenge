@@ -1,9 +1,15 @@
 services:
   postgres:
     image: 'postgres:latest'
+    container_name: picpaydb
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_DB=${DB_NAME}'
+      - 'POSTGRES_USER=${DB_USERNAME}'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD}'
     ports:
-      - '5432'
+      - '5432:5432'
+    volumes:
+      - 'db_data:/var/lib/postgresql/data'
+
+volumes:
+  db_data:
