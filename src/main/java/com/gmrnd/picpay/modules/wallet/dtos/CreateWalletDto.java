@@ -1,6 +1,6 @@
-package com.gmrnd.picpay.controller.dtos;
+package com.gmrnd.picpay.modules.wallet.dtos;
 
-import com.gmrnd.picpay.infra.WalletType;
+import com.gmrnd.picpay.modules.wallet.infra.WalletType;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

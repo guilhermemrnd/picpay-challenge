@@ -1,12 +1,12 @@
-package com.gmrnd.picpay.config;
+package com.gmrnd.picpay.modules.wallet.config;
 
 import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.gmrnd.picpay.infra.JpaWalletTypeRepository;
-import com.gmrnd.picpay.infra.WalletType;
+import com.gmrnd.picpay.modules.wallet.infra.JpaWalletTypeRepository;
+import com.gmrnd.picpay.modules.wallet.infra.WalletType;
 
 @Configuration
 public class DataLoader implements CommandLineRunner {

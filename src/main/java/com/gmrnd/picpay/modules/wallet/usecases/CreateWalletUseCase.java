@@ -1,9 +1,9 @@
-package com.gmrnd.picpay.usecases;
+package com.gmrnd.picpay.modules.wallet.usecases;
 
-import com.gmrnd.picpay.controller.dtos.CreateWalletDto;
-import com.gmrnd.picpay.infra.IWalletRepository;
-import com.gmrnd.picpay.infra.Wallet;
-import com.gmrnd.picpay.usecases.errors.CreateWalletErrors;
+import com.gmrnd.picpay.modules.wallet.dtos.CreateWalletDto;
+import com.gmrnd.picpay.modules.wallet.infra.IWalletRepository;
+import com.gmrnd.picpay.modules.wallet.infra.Wallet;
+import com.gmrnd.picpay.modules.wallet.usecases.errors.CreateWalletErrors;
 
 public class CreateWalletUseCase {
   private final IWalletRepository walletRepo;

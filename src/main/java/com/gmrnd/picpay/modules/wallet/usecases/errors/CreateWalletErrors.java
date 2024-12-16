@@ -1,4 +1,4 @@
-package com.gmrnd.picpay.usecases.errors;
+package com.gmrnd.picpay.modules.wallet.usecases.errors;
 
 import com.gmrnd.picpay.shared.AppException;
 import com.gmrnd.picpay.shared.HttpStatus;

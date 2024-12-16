@@ -1,6 +1,4 @@
-package com.gmrnd.picpay.infra;
-
-import java.util.UUID;
+package com.gmrnd.picpay.modules.wallet.infra;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

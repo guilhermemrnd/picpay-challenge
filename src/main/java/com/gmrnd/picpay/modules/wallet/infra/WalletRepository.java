@@ -1,4 +1,4 @@
-package com.gmrnd.picpay.infra;
+package com.gmrnd.picpay.modules.wallet.infra;
 
 import org.springframework.stereotype.Service;
 

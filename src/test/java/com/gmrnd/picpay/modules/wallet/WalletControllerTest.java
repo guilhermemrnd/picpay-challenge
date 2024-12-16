@@ -1,4 +1,4 @@
-package com.gmrnd.picpay.controller;
+package com.gmrnd.picpay.modules.wallet;
 
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -12,9 +12,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gmrnd.picpay.PostgresTestContainer;
-import com.gmrnd.picpay.controller.dtos.CreateWalletDto;
-import com.gmrnd.picpay.infra.WalletRepository;
-import com.gmrnd.picpay.infra.WalletType;
+import com.gmrnd.picpay.modules.wallet.dtos.CreateWalletDto;
+import com.gmrnd.picpay.modules.wallet.infra.WalletRepository;
+import com.gmrnd.picpay.modules.wallet.infra.WalletType;
 
 @SpringBootTest
 @AutoConfigureMockMvc

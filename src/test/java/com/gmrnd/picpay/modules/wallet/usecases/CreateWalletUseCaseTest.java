@@ -1,4 +1,4 @@
-package com.gmrnd.picpay.usecases;
+package com.gmrnd.picpay.modules.wallet.usecases;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -7,11 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.gmrnd.picpay.controller.dtos.CreateWalletDto;
-import com.gmrnd.picpay.infra.IWalletRepository;
-import com.gmrnd.picpay.infra.Wallet;
-import com.gmrnd.picpay.infra.WalletType;
-import com.gmrnd.picpay.usecases.errors.CreateWalletErrors;
+import com.gmrnd.picpay.modules.wallet.dtos.CreateWalletDto;
+import com.gmrnd.picpay.modules.wallet.infra.IWalletRepository;
+import com.gmrnd.picpay.modules.wallet.infra.Wallet;
+import com.gmrnd.picpay.modules.wallet.infra.WalletType;
+import com.gmrnd.picpay.modules.wallet.usecases.errors.CreateWalletErrors;
 
 public class CreateWalletUseCaseTest {
   private IWalletRepository walletRepo;
