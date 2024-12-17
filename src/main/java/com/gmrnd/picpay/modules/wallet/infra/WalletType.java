@@ -35,4 +35,8 @@ public class WalletType {
       return new WalletType(id, description);
     }
   }
+
+  public boolean isMerchant() {
+    return id != null && id.equals(Enum.MERCHANT.id);
+  }
 }

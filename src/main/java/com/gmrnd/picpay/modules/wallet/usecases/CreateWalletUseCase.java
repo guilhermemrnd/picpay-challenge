@@ -1,9 +1,9 @@
 package com.gmrnd.picpay.modules.wallet.usecases;
 
 import com.gmrnd.picpay.modules.wallet.dtos.CreateWalletDto;
+import com.gmrnd.picpay.modules.wallet.exceptions.WalletAlreadyExistsException;
 import com.gmrnd.picpay.modules.wallet.infra.IWalletRepository;
 import com.gmrnd.picpay.modules.wallet.infra.Wallet;
-import com.gmrnd.picpay.modules.wallet.usecases.errors.CreateWalletErrors;
 
 public class CreateWalletUseCase {
   private final IWalletRepository walletRepo;
@@ -17,7 +17,7 @@ public class CreateWalletUseCase {
 
     boolean exists = walletRepo.exists(wallet.getEmail(), wallet.getCpfCnpj());
     if (exists) {
-      throw new CreateWalletErrors.WalletAlreadyExists();
+      throw new WalletAlreadyExistsException();
     }
 
     return walletRepo.save(wallet);

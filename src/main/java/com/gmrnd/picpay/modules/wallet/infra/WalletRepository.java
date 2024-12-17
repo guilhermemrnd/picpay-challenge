@@ -1,5 +1,8 @@
 package com.gmrnd.picpay.modules.wallet.infra;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -11,6 +14,10 @@ public class WalletRepository implements IWalletRepository {
 
   public WalletRepository(JpaWalletRepository jpaWalletRepo) {
     this.jpaWalletRepo = jpaWalletRepo;
+  }
+
+  public Optional<Wallet> findById(UUID id) {
+    return jpaWalletRepo.findById(id);
   }
 
   public Boolean exists(String email, String cpfCnpj) {

@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import com.gmrnd.picpay.modules.wallet.dtos.CreateWalletDto;
+import com.gmrnd.picpay.modules.wallet.exceptions.WalletAlreadyExistsException;
 import com.gmrnd.picpay.modules.wallet.infra.IWalletRepository;
 import com.gmrnd.picpay.modules.wallet.infra.Wallet;
 import com.gmrnd.picpay.modules.wallet.infra.WalletType;
-import com.gmrnd.picpay.modules.wallet.usecases.errors.CreateWalletErrors;
 
 public class CreateWalletUseCaseTest {
   private IWalletRepository walletRepo;
@@ -29,7 +29,7 @@ public class CreateWalletUseCaseTest {
 
     when(walletRepo.exists(props.email(), props.cpfCnpj())).thenReturn(true);
 
-    assertThrows(CreateWalletErrors.WalletAlreadyExists.class,
+    assertThrows(WalletAlreadyExistsException.class,
         () -> createWalletUseCase.execute(props));
     verify(walletRepo, never()).save(any());
   }

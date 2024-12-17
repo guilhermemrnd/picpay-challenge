@@ -3,6 +3,9 @@ package com.gmrnd.picpay.modules.wallet.infra;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import com.gmrnd.picpay.modules.transaction.exceptions.InsufficientBalanceException;
+import com.gmrnd.picpay.modules.transaction.exceptions.InvalidPayerException;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -52,4 +55,19 @@ public class Wallet {
     this.walletType = walletType;
   }
 
+  public void debit(BigDecimal value) {
+    if (this.walletType.isMerchant()) {
+      throw new InvalidPayerException();
+    }
+
+    if (this.balance.compareTo(value) < 0) {
+      throw new InsufficientBalanceException();
+    }
+
+    this.balance = this.balance.subtract(value);
+  }
+
+  public void credit(BigDecimal value) {
+    this.balance = this.balance.add(value);
+  }
 }

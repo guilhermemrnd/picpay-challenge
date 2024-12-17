@@ -16,3 +16,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+client:
+  authorization-service:
+    url: https://run.mocky.io/v3/2e2d1021-2a52-40fd-b302-6de708f377a0
+  notification-service:
+    url: https://run.mocky.io/v3/f5284c67-7894-4abb-b36e-e4a5a2f83755
