@@ -1,5 +1,8 @@
 package com.gmrnd.picpay.modules.transaction.infra;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -10,6 +13,10 @@ public class TransactionRepository implements ITransactionRepository {
 
   public TransactionRepository(JpaTransactionRepository jpaTransactionRepo) {
     this.jpaTransactionRepo = jpaTransactionRepo;
+  }
+
+  public Optional<Transaction> findById(UUID id) {
+    return jpaTransactionRepo.findById(id);
   }
 
   @Transactional
